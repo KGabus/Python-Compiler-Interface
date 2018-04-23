@@ -35,9 +35,7 @@ def file_selection():
         compile_array.append(sel_file[0])         #the first thing in the list will be the filename
         sel_file = sel_file[0]
         sel_file = os.path.basename(sel_file)       #remove file path for display purposes
-        debug_test(sel_file)
         selected_files_box.insert(END, sel_file)    #add file to listbox
-        debug_test(compile_array)
 
 
 def debug_test(thing):
@@ -58,9 +56,8 @@ def compile_event():
 
     if debug_selected.get():
         compile_array.append("-g")
-    debug_test(compile_array)
 
-    compile_result = subprocess.Popen(compile_array, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    compile_result = subprocess.Popen(compile_array, stdout=subprocess.PIPE, stderr=subprocess.PIPE)        #do the compiling
     (out, error) = compile_result.communicate()
 
     if error:
@@ -79,7 +76,6 @@ def compile_event():
         compile_array.remove("-o")
 
     compile_array.remove(output_str.get())
-    debug_test(compile_array)
 
     debug_selected.set(0)
     std_sel_option.set("-std=c++98")
