@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+Name: compileGUI
+Date: 24 April 2018
+Author: Kaylee Gabus
+Description: Python 3 interface for Linux system to compile c++ files.
+"""
 from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
